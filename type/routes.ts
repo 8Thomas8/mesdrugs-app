@@ -4,7 +4,7 @@ export enum PublicRoutes {
 }
 
 export enum AuthRoutes {
-  App = '/app',
+  App = '/drugs',
   Profile = '/profil',
   Support = '/support',
 }

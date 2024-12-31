@@ -29,10 +29,27 @@ export const useFormValidation = () => {
     return true
   }
 
+  const isFloat = (value: string) => {
+    const floatPattern = /^\d+(\.\d{1,2})?$/
+    if (!floatPattern.test(value)) {
+      return 'Veuillez entrer un nombre valide.'
+    }
+    return true
+  }
+
+  const isDate = (value: string) => {
+    const dateFormat = /^\d{2}\/\d{2}\/\d{4}$/
+    if (!dateFormat.test(value)) {
+      return 'Veuillez entrer une date valide.'
+    }
+  }
+
   return {
     required,
     email,
     password,
     passwordConfirmation,
+    isFloat,
+    isDate,
   }
 }

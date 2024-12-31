@@ -1,11 +1,15 @@
 import { Expose, Transform } from 'class-transformer'
+import type DrugBrand from '~/type/dto/DrugBrand'
 
-export default class UserDto {
+export default class DrugName {
   @Expose()
   id!: number
 
   @Expose()
-  email!: string
+  name!: string
+
+  @Expose()
+  drugBrand!: DrugBrand
 
   @Expose()
   @Transform(({ value }) => (value ? new Date(value) : value), { toClassOnly: true })
